@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tango/pages/light/boarding_page.dart';
 
 void main() => runApp(TangoApp());
 
@@ -12,7 +13,7 @@ class TangoApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      //home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: BoardingPage(),
     );
   }
 }
