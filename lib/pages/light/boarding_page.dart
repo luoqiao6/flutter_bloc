@@ -95,57 +95,6 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
                         ),
                       ),
 
-                      /// 页码指示
-                      Padding(
-                        padding: EdgeInsets.only(top: 30),
-                        child: Row(
-                          children: <Widget>[
-
-                            Container(
-                              width: 18,
-                              height: 5,
-                              decoration: BoxDecoration(
-                                color: TangoColors.blue230,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(3),
-                                ),
-                              ),
-                            ),
-
-                            Padding(
-                              padding: EdgeInsets.only(right: 10),
-                            ),
-
-                            Container(
-                              width: 8,
-                              height: 5,
-                              decoration: BoxDecoration(
-                                color: TangoColors.lightBlue255,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(3),
-                                ),
-                              ),
-                            ),
-
-                            Padding(
-                              padding: EdgeInsets.only(right: 10),
-                            ),
-
-                            Container(
-                              width: 8,
-                              height: 5,
-                              decoration: BoxDecoration(
-                                color: TangoColors.lightBlue255,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(3),
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                      ),
-
 
                     ],
                   ),
@@ -188,59 +137,7 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
                         ),
                       ),
 
-
-                      /// 页码指示
-                      Padding(
-                        padding: EdgeInsets.only(top: 30),
-                        child: Row(
-                          children: <Widget>[
-
-                            Container(
-                              width: 8,
-                              height: 5,
-                              decoration: BoxDecoration(
-                                color: TangoColors.lightBlue255,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(3),
-                                ),
-                              ),
-                            ),
-
-                            Padding(
-                              padding: EdgeInsets.only(right: 10),
-                            ),
-
-                            Container(
-                              width: 18,
-                              height: 5,
-                              decoration: BoxDecoration(
-                                color: TangoColors.blue230,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(3),
-                                ),
-                              ),
-                            ),
-
-                            Padding(
-                              padding: EdgeInsets.only(right: 10),
-                            ),
-
-                            Container(
-                              width: 8,
-                              height: 5,
-                              decoration: BoxDecoration(
-                                color: TangoColors.lightBlue255,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(3),
-                                ),
-                              ),
-                            ),
-
-                          ],
-                        ),
-                      ),
-
-
+                      
                     ],
                   ),
                 ),
@@ -349,52 +246,8 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
                 );
               },
             )
-//            Row(
-//              children: <Widget>[
-//
-//                Container(
-//                  width: 8,
-//                  height: 5,
-//                  decoration: BoxDecoration(
-//                    color: TangoColors.lightBlue255,
-//                    borderRadius: BorderRadius.all(
-//                      Radius.circular(3),
-//                    ),
-//                  ),
-//                ),
-//
-//                Padding(
-//                  padding: EdgeInsets.only(right: 10),
-//                ),
-//
-//                Container(
-//                  width: 18,
-//                  height: 5,
-//                  decoration: BoxDecoration(
-//                    color: TangoColors.blue230,
-//                    borderRadius: BorderRadius.all(
-//                      Radius.circular(3),
-//                    ),
-//                  ),
-//                ),
-//
-//                Padding(
-//                  padding: EdgeInsets.only(right: 10),
-//                ),
-//
-//                Container(
-//                  width: 8,
-//                  height: 5,
-//                  decoration: BoxDecoration(
-//                    color: TangoColors.lightBlue255,
-//                    borderRadius: BorderRadius.all(
-//                      Radius.circular(3),
-//                    ),
-//                  ),
-//                ),
-//
-//              ],
-//            ),
+
+
           ),
 
 
