@@ -21,6 +21,8 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   flutter_svg: ^0.10.3
+  rxdart:
+  http:
 
 
 dev_dependencies:
