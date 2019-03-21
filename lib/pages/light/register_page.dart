@@ -26,12 +26,12 @@ class _RegisterPageState extends State<RegisterPage> {
           //mainAxisAlignment: MainAxisAlignment.center,
           slivers: <Widget>[
 
-            SliverPadding(
-              padding: EdgeInsets.only(top: 100),
-            ),
-
             SliverList(
               delegate: SliverChildListDelegate([
+
+                Padding(
+                  padding: EdgeInsets.only(top: 80),
+                ),
 
                 Container(
                   //width: 120,
@@ -43,18 +43,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-              ]),
-            ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                ),
 
-
-
-            SliverPadding(
-              padding: EdgeInsets.only(top: 20),
-            ),
-
-            SliverList(
-              delegate: SliverChildListDelegate([
-
+                /// Logo
                 Container(
                   child: SvgPicture.asset(
                     'res/images/tango_text.svg',
@@ -64,17 +57,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-              ]),
-            ),
+                Padding(
+                  padding: EdgeInsets.only(top: 40),
+                ),
 
-            SliverPadding(
-              padding: EdgeInsets.only(top: 40),
-            ),
-
-            /// Email TextField
-            SliverList(
-              delegate: SliverChildListDelegate([
-
+                /// Email
                 Container(
                   height: 52,
                   decoration: BoxDecoration(
@@ -119,18 +106,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-              ]),
-            ),
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                ),
 
 
-            SliverPadding(
-              padding: EdgeInsets.only(top: 20),
-            ),
-
-            /// Password TextField
-            SliverList(
-              delegate: SliverChildListDelegate([
-
+                /// Password
                 Container(
                   height: 52,
                   decoration: BoxDecoration(
@@ -175,18 +156,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
+                Padding(
+                  padding: EdgeInsets.only(top: 20),
+                ),
 
-              ]),
-            ),
-
-            SliverPadding(
-              padding: EdgeInsets.only(top: 20),
-            ),
-
-            /// Password Retry TextField
-            SliverList(
-              delegate: SliverChildListDelegate([
-
+                /// Password Retry
                 Container(
                   height: 52,
                   decoration: BoxDecoration(
@@ -231,15 +205,12 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
                 ),
 
-              ]),
-            ),
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                ),
 
-            SliverPadding(
-              padding: EdgeInsets.only(top: 20),
-            ),
 
-            SliverList(
-              delegate: SliverChildListDelegate([
+                /// text
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -252,16 +223,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ],
                 ),
-                
-              ]),
-            ),
 
-            SliverPadding(
-              padding: EdgeInsets.only(top: 20),
-            ),
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                ),
 
-            SliverList(
-              delegate: SliverChildListDelegate([
+                /// Sign In bottom
                 Container(
                   height: 52,
                   alignment: Alignment.center,
@@ -272,19 +239,13 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ),
                   child: Text('Sign In', style: TangoTextStyles.SFProDisplaySemiBold15White,),
-                )
+                ),
 
-              ]),
-            ),
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                ),
 
-            SliverPadding(
-              padding: EdgeInsets.only(top: 30),
-            ),
-
-            /// OR
-            SliverList(
-              delegate: SliverChildListDelegate([
-
+                /// OR
                 Row(
                   children: <Widget>[
 
@@ -320,17 +281,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   ],
                 ),
 
+                Padding(
+                  padding: EdgeInsets.only(top: 30),
+                ),
 
-              ]),
-            ),
-
-            SliverPadding(
-              padding: EdgeInsets.only(top: 30),
-            ),
-
-
-            SliverList(
-              delegate: SliverChildListDelegate([
+                /// third login
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -371,12 +326,15 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   ],
                 ),
+
+
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                ),
+
+
+
               ]),
-            ),
-
-
-            SliverPadding(
-              padding: EdgeInsets.only(top: 30),
             ),
 
 
