@@ -24,6 +24,13 @@ class TangoTextStyles {
     fontWeight: FontWeight.w400,
   );
 
+  static const SFProDisplaySemiBold15White = TextStyle(
+    color: TangoColors.white,
+    fontSize: 15,
+    fontFamily: 'SF-Pro-Display-SemiBold',
+    fontWeight: FontWeight.w600,
+  );
+
   static const SFProTextRegular14Black146 = TextStyle(
     color: TangoColors.black51,
     fontSize: 14,
@@ -37,5 +44,13 @@ class TangoTextStyles {
     fontFamily: 'SF-Pro-Display-Regular',
     fontWeight: FontWeight.w400,
   );
+
+  static const SFProDisplayMedium14Black146 = TextStyle(
+    color: TangoColors.black146,
+    fontSize: 14,
+    fontFamily: 'SF-Pro-Display-Medium',
+    fontWeight: FontWeight.w600,
+  );
+
 
 }
