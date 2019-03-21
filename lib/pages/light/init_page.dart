@@ -74,6 +74,11 @@ class _InitPage extends State<InitPage> {
             ],
           ),
 
+
+//          Container(
+//            child: CircularProgressIndicator(),
+//          ),
+
         ],
       ),
     );

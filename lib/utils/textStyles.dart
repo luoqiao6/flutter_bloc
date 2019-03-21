@@ -31,5 +31,11 @@ class TangoTextStyles {
     //fontWeight: FontWeight.w400,
   );
 
+  static const SFProDisplayRegular15Black146 = TextStyle(
+    color: TangoColors.black146,
+    fontSize: 15,
+    fontFamily: 'SF-Pro-Display-Regular',
+    fontWeight: FontWeight.w400,
+  );
 
 }
