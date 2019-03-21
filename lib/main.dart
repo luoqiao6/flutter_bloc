@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tango/pages/light/boarding_page.dart';
 import 'package:tango/pages/light/init_page.dart';
 import 'package:tango/pages/light/register_page.dart';
+import 'package:tango/pages/light/login_page.dart';
 
 void main() => runApp(TangoApp());
 
@@ -15,9 +16,11 @@ class TangoApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: RegisterPage(),//BoardingPage(),//InitPage(),//,
+      home: LoginPage(),//BoardingPage(),//InitPage(),//,
       routes: {
         '/init_page': (BuildContext context) => InitPage(),
+        '/register_page': (BuildContext context) => RegisterPage(),
+        '/login_page': (BuildContext context) => LoginPage(),
 
       },
     );
