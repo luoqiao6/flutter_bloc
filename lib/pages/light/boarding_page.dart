@@ -21,12 +21,13 @@ class BoardingPage extends StatefulWidget {
 
 class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderStateMixin {
 
-  //TabController _tabController;
+  PageController _pageController;
   BoardingBloc _boardingBloc;
+  final _totalPage = 3;
 
   @override
   void dispose() {
-    //_tabController.dispose();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -34,7 +35,12 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
   @override
   void initState() {
     super.initState();
-    //_tabController = TabController(length: 3, vsync: this);
+
+    _pageController = PageController();
+
+//    _pageController.addListener(() {
+//      print('page: ' + _pageController.page.toString());
+//    });
 
     _boardingBloc = BoardingBloc();
   }
@@ -49,7 +55,7 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
 
           //底部滑动的部分
           PageView(
-              //controller: _tabController,
+            controller: _pageController,
             onPageChanged: (pageNum) {
               _boardingBloc.fireEvent(BoardingEvent(pageNum: pageNum));
 
@@ -137,7 +143,7 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
                         ),
                       ),
 
-                      
+
                     ],
                   ),
                 ),
@@ -194,58 +200,105 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
 
           /// 页码指示标志
 
+
           Padding(
-            padding: EdgeInsets.only(top: 50),
-            child: BlocEventStateBuilder<BoardingEvent, BoardingState>(
-              bloc: _boardingBloc,
-              builder: (BuildContext context, BoardingState state) {
+            padding: EdgeInsets.only(top: 50, bottom: 70, left: 30, right: 30),
+            child: Row(
+              //mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
 
-                print('currentPageNum: ' + state.currentPageNum.toString());
+                BlocEventStateBuilder<BoardingEvent, BoardingState>(
+                  bloc: _boardingBloc,
+                  builder: (BuildContext context, BoardingState state) {
 
-                Widget inActive = Container(
-                  width: 8,
-                  height: 5,
-                  decoration: BoxDecoration(
-                    color: TangoColors.lightBlue255,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(3),
+                    print('currentPageNum: ' + state.currentPageNum.toString());
+
+                    Widget inActive = Container(
+                      width: 8,
+                      height: 5,
+                      decoration: BoxDecoration(
+                        color: TangoColors.lightBlue255,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(3),
+                        ),
+                      ),
+                    );
+
+                    Widget active = Container(
+                      width: 18,
+                      height: 5,
+                      decoration: BoxDecoration(
+                        color: TangoColors.blue230,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(3),
+                        ),
+                      ),
+                    );
+
+
+                    return Row(
+                      children: <Widget>[
+
+                        state.currentPageNum == 0 ? active : inActive,
+
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                        ),
+
+                        state.currentPageNum == 1 ? active : inActive,
+
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                        ),
+
+                        state.currentPageNum == 2 ? active : inActive,
+
+                      ],
+                    );
+                  },
+                ),
+
+                Expanded(
+                  child: Container(
+                    //color: TangoColors.blue230,
+                  ),
+                ),
+
+                GestureDetector(
+                  onTap: () {
+                    print('onTap: ' + _pageController.page.toString());
+
+                    if (_pageController.page < _totalPage) {
+                      final next = _pageController.page.toInt() + 1;
+
+                      //_pageController.jumpToPage(next);
+
+                      _pageController.animateToPage(next, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
+                    } else {
+
+                    }
+
+                  },
+                  child: Container(
+                    width: 32,
+                    height: 32,
+                    padding: EdgeInsets.only(left: 7, right: 7),
+                    decoration: BoxDecoration(
+                      color: TangoColors.blue230,
+                      shape: BoxShape.circle,
+                    ),
+                    child: SvgPicture.asset(
+                      'res/images/arrow_icon.svg',
+                      color: TangoColors.white,
+                      //width: 18,
+                      //height: 12,
                     ),
                   ),
-                );
+                ),
 
-                Widget active = Container(
-                  width: 18,
-                  height: 5,
-                  decoration: BoxDecoration(
-                    color: TangoColors.blue230,
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(3),
-                    ),
-                  ),
-                );
-
-
-                return Row(
-                  children: <Widget>[
-
-                    state.currentPageNum == 0 ? active : inActive,
-
-                    Padding(
-                      padding: EdgeInsets.only(right: 10),
-                    ),
-
-                  state.currentPageNum == 1 ? active : inActive,
-
-                    Padding(
-                      padding: EdgeInsets.only(right: 10),
-                    ),
-
-                    state.currentPageNum == 2 ? active : inActive,
-
-                  ],
-                );
-              },
-            )
+              ],
+            ),
 
 
           ),

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="120" height="120" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.534" y1="1.282" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6385e6"/>
+      <stop offset="1" stop-color="#b36ae8"/>
+    </linearGradient>
+  </defs>
+  <g id="logo_circle_light" transform="translate(29 31)">
+    <circle id="Oval_3" data-name="Oval 3" cx="60" cy="60" r="60" transform="translate(-29 -31)" fill="url(#linear-gradient)"/>
+    <path id="Triangle" d="M33,0,66,56.862H0Z" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
+    <path id="Triangle-2" data-name="Triangle" d="M18.785,0,37.569,32.492H0Z" transform="translate(51.785 54.831) rotate(180)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
+  </g>
+</svg>
