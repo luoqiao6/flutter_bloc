@@ -58,7 +58,7 @@ class _InitPage extends State<InitPage> {
               ),
 
               Padding(
-                padding: EdgeInsets.only(top: 10),
+                padding: EdgeInsets.only(top: 16),
               ),
 
               Container(

@@ -269,7 +269,11 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
                   onTap: () {
                     print('onTap: ' + _pageController.page.toString());
 
-                    if (_pageController.page < _totalPage) {
+                    final currentPageNum = _pageController.page.round();
+
+                    print('currentPage: ' + currentPageNum.toString());
+
+                    if (currentPageNum < _totalPage - 1) {
                       final next = _pageController.page.toInt() + 1;
 
                       //_pageController.jumpToPage(next);
@@ -277,6 +281,8 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
                       _pageController.animateToPage(next, duration: Duration(milliseconds: 500), curve: Curves.easeIn);
                     } else {
 
+                      /// 跳到启动页
+                      Navigator.of(context).pushNamed('/init_page');
                     }
 
                   },

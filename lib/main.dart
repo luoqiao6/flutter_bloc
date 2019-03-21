@@ -14,7 +14,11 @@ class TangoApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: InitPage(),//BoardingPage(),
+      home: BoardingPage(),//InitPage(),//,
+      routes: {
+        '/init_page': (BuildContext context) => InitPage(),
+
+      },
     );
   }
 }
