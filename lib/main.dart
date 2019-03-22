@@ -3,6 +3,7 @@ import 'package:tango/pages/light/boarding_page.dart';
 import 'package:tango/pages/light/init_page.dart';
 import 'package:tango/pages/light/register_page.dart';
 import 'package:tango/pages/light/login_page.dart';
+import 'package:tango/pages/light/chat_list_page.dart';
 
 void main() => runApp(TangoApp());
 
@@ -16,11 +17,12 @@ class TangoApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: LoginPage(),//BoardingPage(),//InitPage(),//,
+      home: ChatListPage(),//LoginPage(),//BoardingPage(),//InitPage(),//,
       routes: {
         '/init_page': (BuildContext context) => InitPage(),
         '/register_page': (BuildContext context) => RegisterPage(),
         '/login_page': (BuildContext context) => LoginPage(),
+
 
       },
     );

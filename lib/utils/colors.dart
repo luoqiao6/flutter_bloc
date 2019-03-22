@@ -12,6 +12,8 @@ class TangoColors {
 
   static const Color black51 = Color.fromARGB(255, 51, 51, 51);
   static const Color black146 = Color.fromARGB(255, 146, 146, 146);
+  static const Color black183 = Color.fromARGB(255, 183, 183, 183);
+  static const Color black222 = Color.fromARGB(255, 222, 222, 222);
 
   static const Color red179 = Color.fromARGB(255, 179, 106, 232);
 
