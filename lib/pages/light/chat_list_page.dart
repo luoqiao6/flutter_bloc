@@ -35,15 +35,18 @@ class _ChatListPageState extends State<ChatListPage> {
               SliverPadding(
                 padding: EdgeInsets.only(left: 16, right: 16),
                 sliver: SliverFixedExtentList(
-                  itemExtent: 61,
-                  delegate: SliverChildListDelegate([
-
-                    ChatListItem(),
-
-                  ]),
+                  itemExtent: 71,
+                  delegate: SliverChildBuilderDelegate(
+                    (BuildContext context, index) {
+                      return Padding(
+                        padding: EdgeInsets.only(top: 10, ),
+                        child: ChatListItem(),
+                      );
+                    },
+                    childCount: 20,
+                  ),
                 ),
               ),
-
 
 
 
