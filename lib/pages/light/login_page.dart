@@ -151,30 +151,10 @@ class _LoginPageState extends State<LoginPage> {
 
                     ),
 
-
-
+                    
                   ),
                 ),
 
-
-                Padding(
-                  padding: EdgeInsets.only(top: 30),
-                ),
-
-
-                /// text
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      child: Text('Already have an account?', style: TangoTextStyles.SFProDisplayMedium14Black146,),
-                    ),
-
-                    Container(
-                      child: Text(' Log In'),
-                    ),
-                  ],
-                ),
 
                 Padding(
                   padding: EdgeInsets.only(top: 30),
