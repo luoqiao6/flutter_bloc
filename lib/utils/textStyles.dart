@@ -59,6 +59,20 @@ class TangoTextStyles {
     //fontWeight: FontWeight.w400,
   );
 
+  static const SFProTextRegular10Blue230 = TextStyle(
+    color: TangoColors.blue230,
+    fontSize: 10,
+    fontFamily: 'SF-Pro-Text-Regular',
+    //fontWeight: FontWeight.w400,
+  );
+
+  static const SFProTextRegular10Blue207 = TextStyle(
+    color: TangoColors.blue207,
+    fontSize: 10,
+    fontFamily: 'SF-Pro-Text-Regular',
+    //fontWeight: FontWeight.w400,
+  );
+
   static const SFProDisplayRegular15Black146 = TextStyle(
     color: TangoColors.black146,
     fontSize: 15,

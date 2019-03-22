@@ -4,6 +4,7 @@ import 'package:tango/utils/colors.dart';
 import 'package:tango/utils/textStyles.dart';
 import 'package:tango/widgets/tango_sliver_app_bar.dart';
 import 'package:tango/widgets/chat_list_item.dart';
+import 'package:tango/widgets/tango_bottom_bar.dart';
 
 class ChatListPage extends StatefulWidget {
 
@@ -49,10 +50,11 @@ class _ChatListPageState extends State<ChatListPage> {
               ),
 
 
-
-
             ],
           ),
+
+          TangoBottomBar(),
+
 
         ],
       ),
