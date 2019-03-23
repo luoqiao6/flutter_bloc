@@ -17,12 +17,12 @@ class TangoApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: ChatListPage(),//LoginPage(),//BoardingPage(),//InitPage(),//,
+      home: LoginPage(),//ChatListPage(),////BoardingPage(),//InitPage(),//,
       routes: {
         '/init_page': (BuildContext context) => InitPage(),
         '/register_page': (BuildContext context) => RegisterPage(),
         '/login_page': (BuildContext context) => LoginPage(),
-
+        '/chat_list_page': (BuildContext context) => ChatListPage(),
 
       },
     );

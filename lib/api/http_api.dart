@@ -1,0 +1,67 @@
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
+class HttpApi {
+  final String baseUrl;
+
+  HttpApi(this.baseUrl);
+
+  ///
+  /// @params uri
+  /// @params headers (optional)
+  ///
+  Future<dynamic> get(String uri, {Map<String, String> headers}) async{
+    try {
+
+      http.Response response = await http.get(baseUrl + uri, headers: headers);
+
+      final statusCode = response.statusCode;
+      final String jsonBody = response.body;
+
+      if(statusCode < 200 || statusCode >= 300 || jsonBody == null) {
+        throw new FetchDataException("Error request: ", statusCode);
+      }
+
+      const JsonDecoder decoder = JsonDecoder();
+      return decoder.convert(response.body);
+    } catch (e) {
+      throw new FetchDataException(e.toString(), 0);
+    }
+  }
+
+  Future<dynamic> post(String uri, dynamic body, {Map<String, String> headers}) async {
+    try{
+      http.Response response = await http.post(baseUrl + uri, body: body, headers: headers);
+
+      final statusCode = response.statusCode;
+
+      if(statusCode < 200 || statusCode >= 300) {
+        throw new FetchDataException("Error request: ", statusCode);
+      }
+
+      const JsonDecoder decoder = const JsonDecoder();
+      return decoder.convert(response.body);
+    } catch (e) {
+      throw new FetchDataException(e.toString(), 0);
+    }
+
+  }
+
+
+}
+
+class FetchDataException implements Exception {
+  String _message;
+  int _code;
+
+  FetchDataException(this._message, this._code);
+
+  String toString() {
+    return "Exception: $_message/$_code";
+  }
+
+  int code() {
+    return _code;
+  }
+}
