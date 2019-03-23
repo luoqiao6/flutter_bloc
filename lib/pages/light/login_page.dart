@@ -357,8 +357,25 @@ class _LoginPageState extends State<LoginPage> {
                 return Center(
                   child: CircularProgressIndicator(),
                 );
-              } else {
+              } else if(state.isAuthenticated) {
+
+                /// 跳转到首页，这里应该触发跳转到首页的事件
+                WidgetsBinding.instance.addPostFrameCallback((_){
+                  Navigator.of(context).pushReplacementNamed('/chat_list_page');
+                });
+
                 return Container();
+
+              } else if(state.hasFailed) {
+                return Center(
+                  child: Container(
+
+                    child: Text('登录失败'),
+                  ),
+                );
+
+              } else {
+                  return Container();
               }
 
             },
