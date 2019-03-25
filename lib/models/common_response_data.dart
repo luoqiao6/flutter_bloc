@@ -9,4 +9,9 @@ class CommonResponseData extends Object {
     status = json['status'],
     errMsg = json['msg'],
     data = json['data'];
+
+  @override
+  String toString() {
+    return "status: $status, errMsg: $errMsg, data: " + data.toString();
+  }
 }
