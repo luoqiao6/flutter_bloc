@@ -8,6 +8,12 @@ import 'package:tango/blocs/authentication/authentication_event.dart';
 import 'package:tango/blocs/authentication/authentication_state.dart';
 import 'package:tango/blocs/authentication/login_form_bloc.dart';
 
+import 'package:tango/bloc_helpers/bloc_builder.dart';
+
+import 'package:tango/pages/light/home_page.dart';
+
+import 'package:tango/bloc_helpers/bloc_event_state_inherited_builder.dart';
+
 class LoginPage extends StatefulWidget {
 
   @override
@@ -23,6 +29,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   LoginFormBloc _formBloc = LoginFormBloc();
+
 
   @override
   Widget build(BuildContext context) {
@@ -350,18 +357,27 @@ class _LoginPageState extends State<LoginPage> {
           BlocEventStateBuilder<AuthenticationEvent, AuthenticationState>(
             bloc: _authenticationBloc,
             builder: (BuildContext context, AuthenticationState state){
-              print(state);
+              print('In Build State: ' + state.toString());
 
-              //return Container();
               if (state.isAuthenticating) {
-                return Center(
-                  child: CircularProgressIndicator(),
+
+                return Container(
+                  padding: EdgeInsets.only(top: 24),
+                  child: LinearProgressIndicator(
+                    //value: state.progress.toDouble() / 10,
+                    valueColor: AlwaysStoppedAnimation(TangoColors.blue230),
+                    backgroundColor: TangoColors.white245,
+                  ),
                 );
+
               } else if(state.isAuthenticated) {
+
+                print('state: isAuthenticated=true;');
 
                 /// 跳转到首页，这里应该触发跳转到首页的事件
                 WidgetsBinding.instance.addPostFrameCallback((_){
-                  Navigator.of(context).pushReplacementNamed('/chat_list_page');
+                  //Navigator.of(context).pushNamed('/chat_list_page');
+                  Navigator.of(context).pushReplacementNamed('/home_page');
                 });
 
                 return Container();

@@ -282,7 +282,7 @@ class _BoardingPageState extends State<BoardingPage> with SingleTickerProviderSt
                     } else {
 
                       /// 跳到启动页
-                      Navigator.of(context).pushNamed('/init_page');
+                      Navigator.of(context).pushReplacementNamed('/init_page');
                     }
 
                   },

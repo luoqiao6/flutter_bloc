@@ -3,6 +3,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tango/utils/colors.dart';
 import 'package:tango/utils/textStyles.dart';
 import 'package:tango/utils/gradients.dart';
+import 'package:tango/blocs/init/init_bloc.dart';
+import 'package:tango/blocs/init/init_event.dart';
+import 'package:tango/blocs/init/init_state.dart';
+import 'package:tango/bloc_helpers/bloc_event_state_builder.dart';
 
 
 class InitPage extends StatefulWidget {
@@ -15,8 +19,20 @@ class InitPage extends StatefulWidget {
 }
 
 class _InitPage extends State<InitPage> {
+  InitBloc _initBloc = InitBloc();
 
+  @override
+  void initState() {
+    _initBloc.fireEvent(InitEvent(type: InitEventType.start));
 
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _initBloc?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +40,7 @@ class _InitPage extends State<InitPage> {
     return Scaffold(
       body: Stack(
         //alignment: Alignment.center,
-        alignment: Alignment.center,
+        alignment: Alignment.topCenter,
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
@@ -74,10 +90,32 @@ class _InitPage extends State<InitPage> {
             ],
           ),
 
+          BlocEventStateBuilder<InitEvent, InitState>(
+            bloc: _initBloc,
+            builder: (BuildContext context, InitState state){
+              print('InitState In Bulider: ' + state.toString());
 
-//          Container(
-//            child: CircularProgressIndicator(),
-//          ),
+              if (state.isInitialized) {
+                WidgetsBinding.instance.addPostFrameCallback((_){
+                  Navigator.of(context).pushReplacementNamed('/decision_page');
+                });
+                return Container();
+
+              } else {
+
+                return Container(
+                  padding: EdgeInsets.only(top: 24),
+                  child: LinearProgressIndicator(
+                    value: state.progress.toDouble() / 10,
+                    valueColor: AlwaysStoppedAnimation(TangoColors.blue230),
+                    backgroundColor: TangoColors.white245,
+                  ),
+                );
+
+              }
+
+            },
+          ),
 
         ],
       ),
