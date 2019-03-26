@@ -14,11 +14,10 @@ class AuthenticationBloc extends BlocEventStateBase<AuthenticationEvent, Authent
   Stream<AuthenticationState> eventHandler(AuthenticationEvent event, AuthenticationState currentState) async* {
 
     if(event is LoginEvent) {
-
       /// 正在登陆
       yield AuthenticationState.authenticating();
 
-      await Future.delayed(Duration(seconds: 3));
+      await Future.delayed(Duration(seconds: 2));
 
       final res = Api.postLogin(event.username, event.password);
 
@@ -29,6 +28,8 @@ class AuthenticationBloc extends BlocEventStateBase<AuthenticationEvent, Authent
         yield AuthenticationState.failed();
       }
 
+    } else if (event is LogoutEvent) {
+      yield AuthenticationState.notAuthenticated();
     }
 
   }
