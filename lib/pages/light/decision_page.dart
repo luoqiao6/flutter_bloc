@@ -40,11 +40,7 @@ class DecisionPageState extends State<DecisionPage> {
           }
         }
 
-        return Center(
-          child: Container(
-            child: Text('dicision page'),
-          ),
-        );
+        return Container();
 
       },
     );
