@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tango/utils/colors.dart';
 import 'package:tango/utils/textStyles.dart';
 
-import 'package:tango/bloc_helpers/bloc_event_state_base.dart';
 import 'package:tango/bloc_helpers/bloc_event_state_builder.dart';
 import 'package:tango/blocs/boarding/boarding_bloc.dart';
 import 'package:tango/blocs/boarding/boarding_event.dart';
