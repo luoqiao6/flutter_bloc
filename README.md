@@ -1,16 +1,6 @@
 # tango
 
-A new Flutter application.
+按照 [Reactive Programming - Streams - BLoC - Practical Use Cases](https://www.didierboelens.com/2018/12/reactive-programming---streams---bloc---practical-use-cases/) 介绍的 Bloc 设计模式，实现了引导页、初始化、登录、退出功能。
+使用了原文中的部分代码。
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.io/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.io/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.io/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
