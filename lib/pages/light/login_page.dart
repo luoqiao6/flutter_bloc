@@ -8,12 +8,6 @@ import 'package:tango/blocs/authentication/authentication_event.dart';
 import 'package:tango/blocs/authentication/authentication_state.dart';
 import 'package:tango/blocs/authentication/login_form_bloc.dart';
 
-import 'package:tango/bloc_helpers/bloc_builder.dart';
-
-import 'package:tango/pages/light/home_page.dart';
-
-import 'package:tango/bloc_helpers/bloc_event_state_inherited_builder.dart';
-
 class LoginPage extends StatefulWidget {
 
   @override
